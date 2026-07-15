@@ -62,7 +62,7 @@ export function SongCard({ song, className, size = "md" }: SongCardProps) {
       onClick={handleClick}
       whileHover={{ scale: 1.03 }}
       className={cn(
-        "group cursor-pointer rounded-2xl bg-white/[0.03] p-3 ring-1 ring-white/[0.04] transition-all hover:bg-white/[0.06] hover:ring-white/[0.08]",
+        "group cursor-pointer rounded-2xl bg-white/[0.03] p-3 ring-1 ring-white/[0.04] transition-all duration-300 hover:bg-white/[0.06] hover:ring-[color:rgba(167,139,250,0.28)] hover:shadow-[0_10px_34px_-10px_rgba(167,139,250,0.4)]",
         sizeClasses[size],
         className
       )}
@@ -114,12 +114,12 @@ export function SongCard({ song, className, size = "md" }: SongCardProps) {
           whileHover={{ scale: 1.1 }}
           onClick={handlePlay}
           className={cn(
-            "absolute right-2 bottom-2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-[0_4px_12px_rgba(0,0,0,0.4)] transition-all",
+            "absolute right-2 bottom-2 flex h-10 w-10 items-center justify-center rounded-full [background:var(--grad-aurora)] shadow-[0_4px_16px_rgba(167,139,250,0.5)] transition-all",
             "opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0"
           )}
           style={{ transition: "opacity 0.2s, transform 0.2s" }}
         >
-          <Play className="h-5 w-5 translate-x-[1px] fill-black text-black" />
+          <Play className="h-5 w-5 translate-x-[1px] fill-white text-white" />
         </motion.button>
       </div>
 

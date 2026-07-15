@@ -9,7 +9,6 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Bell, Megaphone, UserPlus, Check, Inbox, Award, X } from "lucide-react";
 import { formatNinePlusStyleBadge } from "@/lib/badge-format";
 import { useAppNotifications, type AppNotificationRow } from "@/hooks/useAppNotifications";
-import { StevenClockStrip } from "@/components/navigation/StevenClockStrip";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -217,7 +216,7 @@ export function NotificationBell() {
                 animate={{ opacity: 1 }}
                 exit={reduceMotion ? undefined : { opacity: 0 }}
                 transition={{ duration: 0.35, ease }}
-                className="fixed inset-0 z-[var(--z-overlay)] flex flex-col bg-[#09090b]/98 backdrop-blur-xl"
+                className="fixed inset-0 z-[var(--z-overlay)] flex flex-col bg-[#070b14]/98 backdrop-blur-xl"
                 style={{
                   paddingTop: "max(1rem, env(safe-area-inset-top, 0px))",
                   paddingBottom: "max(1rem, env(safe-area-inset-bottom, 0px))",
@@ -236,7 +235,6 @@ export function NotificationBell() {
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <StevenClockStrip />
                     <button
                       type="button"
                       onClick={() => setOpen(false)}

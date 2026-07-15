@@ -22,7 +22,7 @@ export function DiscordBotAmbientLayer() {
           className="absolute inset-0 opacity-[0.2]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(139,92,246,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.12) 1px, transparent 1px)",
+              "linear-gradient(rgba(59,130,246,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.12) 1px, transparent 1px)",
             backgroundSize: "56px 56px",
           }}
         />
@@ -36,7 +36,7 @@ export function DiscordBotAmbientLayer() {
         className="absolute inset-0 opacity-[0.22]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(139,92,246,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.14) 1px, transparent 1px)",
+            "linear-gradient(rgba(59,130,246,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.14) 1px, transparent 1px)",
           backgroundSize: "56px 56px",
         }}
         animate={{ backgroundPosition: ["0px 0px", "56px 56px"] }}
@@ -56,7 +56,7 @@ export function DiscordBotAmbientLayer() {
       {FLOATS.map((f, i) => (
         <motion.span
           key={i}
-          className="absolute rounded-full bg-violet-400/40 blur-[1px] shadow-[0_0_12px_rgba(167,139,250,0.45)]"
+          className="absolute rounded-full bg-blue-400/40 blur-[1px] shadow-[0_0_12px_rgba(96,165,250,0.45)]"
           style={{
             left: f.left,
             top: f.top,

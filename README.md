@@ -31,7 +31,6 @@ Aciusfy; keşif, çalma listeleri, sosyal dinleme ve çoklu platform deneyimini 
 - Kapsamlı admin paneli
 - Sanatçı paneli ve içerik yükleme
 - Podcast desteği
-- Minecraft mod entegrasyonu (oyun içi müzik deneyimi)
 
 ### Yardımcı asistan
 - Sohbet tabanlı müzik asistanı
@@ -63,7 +62,6 @@ prisma/        Veritabanı şeması
 native-app/    Mobil istemci
 discord-bot/   Discord müzik botu
 android/       Capacitor Android projesi
-aciusfy-fabric/ Minecraft mod (Fabric)
 ```
 
 ---

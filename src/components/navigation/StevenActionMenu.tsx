@@ -6,11 +6,11 @@ import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { StevenClockStrip } from "@/components/navigation/StevenClockStrip";
 
 export type StevenActionItem = {
   id: string;
   label: string;
+  description?: string;
   href?: string;
   onClick?: () => void | Promise<void>;
   onNavigate?: () => void;
@@ -71,18 +71,17 @@ export function StevenActionMenu({
           animate={{ opacity: 1 }}
           exit={reduceMotion ? undefined : { opacity: 0 }}
           transition={{ duration: 0.35, ease }}
-          className="fixed inset-0 z-[var(--z-overlay)] flex flex-col bg-[#09090b]/98 backdrop-blur-xl"
+          className="fixed inset-0 z-[var(--z-overlay)] flex flex-col bg-[#050810]/98 backdrop-blur-xl"
           style={{
             paddingTop: "max(1rem, env(safe-area-inset-top, 0px))",
             paddingBottom: "max(1rem, env(safe-area-inset-bottom, 0px))",
           }}
         >
-          <div className="flex items-center justify-between gap-4 border-b border-white/[0.06] px-5 py-5 sm:px-8">
-            <StevenClockStrip className="!flex" />
+          <div className="flex items-center justify-end gap-4 border-b border-white/[0.06] px-5 py-5 sm:px-8">
             <button
               type="button"
               onClick={onClose}
-              className="aciusfy-electron-chrome ml-auto rounded-full border border-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:border-white/20 hover:bg-white/[0.04] hover:text-foreground"
+              className="aciusfy-electron-chrome rounded-full border border-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-foreground/80 transition-colors hover:border-white/20 hover:bg-white/[0.04] hover:text-foreground"
             >
               {closeLabel}
             </button>
@@ -113,34 +112,41 @@ export function StevenActionMenu({
                 const num = String(index).padStart(2, "0");
 
                 const row = (
-                  <span className="flex items-center gap-4 sm:gap-5">
-                    <span className="w-12 shrink-0 font-mono text-xs text-foreground/25 tabular-nums sm:text-sm">
+                  <span className="flex w-full items-start gap-4 sm:gap-5">
+                    <span className="w-12 shrink-0 pt-1 font-mono text-xs text-blue-300/35 tabular-nums sm:text-sm">
                       ( {num} )
                     </span>
                     {Icon ? (
                       <Icon
                         className={cn(
-                          "h-5 w-5 shrink-0 sm:h-6 sm:w-6",
-                          item.destructive ? "text-red-400/80" : "text-foreground/45",
+                          "mt-1 h-5 w-5 shrink-0 sm:h-6 sm:w-6",
+                          item.destructive ? "text-red-400/80" : "text-blue-300/55",
                         )}
                         aria-hidden
                       />
                     ) : null}
-                    <span
-                      className={cn(
-                        "font-display text-2xl font-medium tracking-[-0.03em] sm:text-3xl md:text-4xl",
-                        item.destructive ? "text-red-400/90" : "text-foreground",
-                      )}
-                    >
-                      {item.label}
+                    <span className="min-w-0 flex-1">
+                      <span
+                        className={cn(
+                          "block font-display text-2xl font-medium tracking-[-0.03em] transition-colors group-hover:text-blue-100 sm:text-3xl md:text-4xl",
+                          item.destructive ? "text-red-400/90" : "text-foreground",
+                        )}
+                      >
+                        {item.label}
+                      </span>
+                      {item.description ? (
+                        <span className="mt-1 block text-sm leading-relaxed text-muted sm:text-base">
+                          {item.description}
+                        </span>
+                      ) : null}
                     </span>
                   </span>
                 );
 
                 const className = cn(
-                  "group block w-full rounded-2xl px-2 py-3 text-left transition-colors sm:px-3 sm:py-4",
-                  "hover:bg-white/[0.03]",
-                  item.destructive && "hover:bg-red-500/[0.06]",
+                  "group block w-full rounded-2xl border border-transparent px-2 py-3 text-left transition-colors sm:px-3 sm:py-4",
+                  "hover:border-blue-500/15 hover:bg-blue-500/[0.04]",
+                  item.destructive && "hover:border-red-500/20 hover:bg-red-500/[0.06]",
                 );
 
                 const run = async () => {

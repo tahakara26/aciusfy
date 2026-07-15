@@ -24,9 +24,9 @@ const sizeClasses = {
 
 const variantClasses = {
   primary:
-    "bg-foreground text-background shadow-[0_1px_0_rgba(255,255,255,0.12)_inset,0_12px_32px_rgba(0,0,0,0.35)] hover:bg-white",
+    "bg-gradient-to-r from-blue-500 to-sky-400 text-[#050810] shadow-[0_1px_0_rgba(255,255,255,0.25)_inset,0_12px_40px_rgba(37,99,235,0.35)] hover:from-blue-400 hover:to-sky-300",
   secondary:
-    "border border-white/10 bg-white/[0.04] text-foreground hover:border-white/16 hover:bg-white/[0.07]",
+    "border border-blue-500/20 bg-blue-500/[0.06] text-foreground hover:border-blue-400/30 hover:bg-blue-500/10",
   ghost: "text-muted hover:text-foreground hover:bg-white/[0.05]",
 };
 

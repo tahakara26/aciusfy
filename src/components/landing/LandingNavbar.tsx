@@ -7,13 +7,12 @@ import { useSession } from "next-auth/react";
 import { useUserProfile } from "@/components/providers/UserProfileProvider";
 import { useTranslation } from "@/hooks/useTranslation";
 import { motion } from "framer-motion";
-import { Shield } from "lucide-react";
+import { Bot, Download, Layers, Monitor, Shield, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AciusfyLandingWordmark } from "@/components/branding/AciusfyLandingWordmark";
 import { ElectronWindowChromeGroup } from "@/components/layout/ElectronWindowChromeGroup";
 import { useIsAciusfyDesktop } from "@/hooks/useIsAciusfyDesktop";
 import { AnimatedButton } from "@/components/landing/animated-button";
-import { StevenClockStrip } from "@/components/navigation/StevenClockStrip";
 import { StevenFullScreenMenu, type StevenMenuItem } from "@/components/navigation/StevenFullScreenMenu";
 import { StevenProfileMenu } from "@/components/navigation/StevenProfileMenu";
 import { useLenis, scrollWithLenis } from "@/components/providers/LenisProvider";
@@ -29,6 +28,11 @@ function scrollToHash(href: string, lenis: ReturnType<typeof useLenis>) {
   }
   const el = document.getElementById(id);
   if (el) scrollWithLenis(lenis, el);
+}
+
+function sectionHref(hash: string, variant: PremiumSiteNavVariant) {
+  if (variant === "landing") return hash;
+  return `/${hash}`;
 }
 
 export function PremiumSiteNav({ variant = "landing" }: { variant?: PremiumSiteNavVariant }) {
@@ -58,53 +62,56 @@ export function PremiumSiteNav({ variant = "landing" }: { variant?: PremiumSiteN
   }, [pathname]);
 
   const onHashNavigate = useCallback(
-    (href: string) => scrollToHash(href, lenis),
-    [lenis],
+    (href: string) => {
+      if (showHashScroll) {
+        scrollToHash(href, lenis);
+        return;
+      }
+      if (typeof window !== "undefined") {
+        window.location.assign(sectionHref(href, variant));
+      }
+    },
+    [lenis, showHashScroll, variant],
   );
 
+  const hashItem = (
+    id: string,
+    label: string,
+    description: string,
+    hash: string,
+    icon: StevenMenuItem["icon"],
+  ): StevenMenuItem => ({
+    id,
+    label,
+    description,
+    icon,
+    href: sectionHref(hash, variant),
+    onNavigate: showHashScroll ? () => onHashNavigate(hash) : undefined,
+  });
+
   const menuItems: StevenMenuItem[] = [
-    {
-      id: "home",
-      label: t("landingNavHome"),
-      href: variant === "landing" ? "#top" : "/",
-      onNavigate: showHashScroll ? () => onHashNavigate(variant === "landing" ? "#top" : "/") : undefined,
-    },
-    {
-      id: "features",
-      label: t("landingNavFeatures"),
-      href: "#features",
-      onNavigate: showHashScroll ? () => onHashNavigate("#features") : undefined,
-    },
-    {
-      id: "explore",
-      label: t("landingNavExplore"),
-      href: "#categories",
-      onNavigate: showHashScroll ? () => onHashNavigate("#categories") : undefined,
-    },
-    {
-      id: "pricing",
-      label: t("landingPricingEyebrow"),
-      href: "#pricing",
-      onNavigate: showHashScroll ? () => onHashNavigate("#pricing") : undefined,
-    },
-    {
-      id: "faq",
-      label: t("landingFaqEyebrow"),
-      href: "#faq",
-      onNavigate: showHashScroll ? () => onHashNavigate("#faq") : undefined,
-    },
+    hashItem("platform", t("landingNavPlatform"), t("landingNavPlatformDesc"), "#demo", Monitor),
+    hashItem("experience", t("landingNavExperience"), t("landingNavExperienceDesc"), "#experience", Sparkles),
+    hashItem("capabilities", t("landingNavCapabilities"), t("landingNavCapabilitiesDesc"), "#features", Layers),
     {
       id: "discord",
       label: t("landingDiscordBotNav"),
+      description: t("landingNavDiscordDesc"),
+      icon: Bot,
       href: "/discord-bot",
     },
     {
-      id: "download",
-      label: t("landingNavDownload"),
+      id: "desktop",
+      label: t("landingNavDesktop"),
+      description: t("landingNavDesktopDesc"),
+      icon: Download,
       href: "/download",
     },
+    { id: "divider-auth", divider: true, label: "" },
+    hashItem("start", t("landingNavStart"), t("landingNavStartDesc"), "#cta", Sparkles),
   ].filter((item) => {
-    if (!showHashScroll && item.href.startsWith("#")) return false;
+    if (item.divider) return true;
+    if (!showHashScroll && item.href?.startsWith("#")) return false;
     return true;
   });
 
@@ -130,7 +137,11 @@ export function PremiumSiteNav({ variant = "landing" }: { variant?: PremiumSiteN
             {t("landingRegister")}
           </AnimatedButton>
         </div>
-      ) : null}
+      ) : (
+        <AnimatedButton href={profileHref} variant="secondary" size="sm">
+          {t("profile")}
+        </AnimatedButton>
+      )}
     </div>
   );
 
@@ -140,6 +151,8 @@ export function PremiumSiteNav({ variant = "landing" }: { variant?: PremiumSiteN
         className={cn(
           "premium-nav-bar landing-header-safe fixed left-0 right-0 top-0 z-[var(--z-chrome)]",
           "flex items-center justify-between gap-3 px-4 pb-4 sm:px-6 sm:pb-5",
+          "border-b border-transparent bg-[#050810]/0 backdrop-blur-0 transition-[background-color,border-color,backdrop-filter] duration-500",
+          menuOpen && "border-blue-500/10 bg-[#050810]/90 backdrop-blur-xl",
           isAciusfyDesktop && "aciusfy-electron-titlebar",
         )}
       >
@@ -149,8 +162,6 @@ export function PremiumSiteNav({ variant = "landing" }: { variant?: PremiumSiteN
         >
           <AciusfyLandingWordmark variant="navbar" />
         </Link>
-
-        <StevenClockStrip className="absolute left-1/2 hidden -translate-x-1/2 lg:flex" />
 
         <div className="relative z-10 ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
           {showDiscordAdminLink ? (
@@ -186,9 +197,10 @@ export function PremiumSiteNav({ variant = "landing" }: { variant?: PremiumSiteN
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setMenuOpen(true)}
-            className="aciusfy-electron-chrome rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-foreground/85 transition-colors hover:border-white/16 hover:bg-white/[0.07] hover:text-foreground"
+            className="aciusfy-electron-chrome rounded-full border border-blue-500/20 bg-blue-500/[0.06] px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-blue-100/85 transition-colors hover:border-blue-400/30 hover:bg-blue-500/10 hover:text-blue-50"
             aria-expanded={menuOpen}
             aria-haspopup="dialog"
+            aria-label={t("landingMenuOpen")}
           >
             {t("landingMenuTitle")}
           </motion.button>
@@ -205,6 +217,8 @@ export function PremiumSiteNav({ variant = "landing" }: { variant?: PremiumSiteN
         items={menuItems}
         footer={menuFooter}
         title={t("landingMenuTitle")}
+        subtitle={t("landingMenuSubtitle")}
+        closeLabel={t("landingMenuClose")}
       />
     </>
   );

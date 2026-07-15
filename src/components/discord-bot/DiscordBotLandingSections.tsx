@@ -15,9 +15,9 @@ import Link from "next/link";
 import { useTranslation } from "@/hooks/useTranslation";
 
 const cardGradients = [
-  "from-fuchsia-600/90 via-violet-600/80 to-indigo-900/90",
+  "from-blue-600/90 via-indigo-600/80 to-blue-950/90",
   "from-sky-500/85 via-cyan-600/75 to-blue-900/90",
-  "from-amber-500/80 via-orange-600/70 to-rose-900/85",
+  "from-blue-500/80 via-sky-600/70 to-indigo-950/85",
 ];
 
 const heroTitleLine: Variants = {
@@ -66,7 +66,7 @@ export function DiscordBotHeroBlock({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.5 }}
             whileHover={reduceMotion ? undefined : { scale: 1.03 }}
-            className="mb-5 inline-flex cursor-default items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-violet-200/90 shadow-lg shadow-violet-900/20 backdrop-blur-sm"
+            className="mb-5 inline-flex cursor-default items-center gap-2 rounded-full border border-blue-500/15 bg-blue-500/[0.06] px-3 py-1 text-xs font-medium text-blue-200/90 shadow-lg shadow-blue-950/20 backdrop-blur-sm"
           >
             <motion.span
               animate={reduceMotion ? undefined : { rotate: [0, 12, -8, 0] }}
@@ -83,7 +83,7 @@ export function DiscordBotHeroBlock({
                 ? undefined
                 : {
                     backgroundImage:
-                      "linear-gradient(100deg, #fafafa 0%, #ddd6fe 30%, #7dd3fc 52%, #e9d5ff 72%, #fafafa 100%)",
+                      "linear-gradient(100deg, #fafafa 0%, #bfdbfe 30%, #7dd3fc 52%, #dbeafe 72%, #fafafa 100%)",
                     backgroundSize: "200% 100%",
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
@@ -114,7 +114,7 @@ export function DiscordBotHeroBlock({
             {t("discordBotHeroTitle")}
           </motion.h1>
           <motion.div
-            className="mt-3 h-1 w-24 origin-left rounded-full bg-gradient-to-r from-violet-500 via-fuchsia-500 to-sky-400 sm:w-32"
+            className="mt-3 h-1 w-24 origin-left rounded-full bg-gradient-to-r from-blue-500 via-sky-400 to-cyan-400 sm:w-32"
             variants={heroTitleLine}
             initial="hidden"
             animate="visible"
@@ -149,10 +149,10 @@ export function DiscordBotHeroBlock({
             <motion.button
               type="button"
               onClick={onScrollToPanel}
-              whileHover={reduceMotion ? undefined : { scale: 1.04, boxShadow: "0 12px 40px rgba(124,58,237,0.35)" }}
+              whileHover={reduceMotion ? undefined : { scale: 1.04, boxShadow: "0 12px 40px rgba(37,99,235,0.35)" }}
               whileTap={reduceMotion ? undefined : { scale: 0.97 }}
               transition={springTap}
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-violet-900/35"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-sky-600 px-5 py-2.5 text-sm font-medium text-white shadow-lg shadow-blue-950/35"
             >
               {t("discordBotScrollToPanel")}
               <motion.span
@@ -206,7 +206,7 @@ function HeroFloatingCards({ reduceMotion }: { reduceMotion: boolean }) {
     <div className="relative mx-auto flex h-[min(460px,88vw)] w-full max-w-md items-center justify-center sm:h-[min(430px,78vw)] lg:mx-0 lg:h-[min(420px,70vw)] lg:max-w-none lg:justify-end">
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <motion.div
-          className="h-[min(340px,55vw)] w-[min(340px,55vw)] rounded-full bg-gradient-to-tr from-violet-600/30 via-fuchsia-500/15 to-transparent blur-3xl"
+          className="h-[min(340px,55vw)] w-[min(340px,55vw)] rounded-full bg-gradient-to-tr from-blue-600/30 via-sky-500/15 to-transparent blur-3xl"
           animate={
             reduceMotion
               ? undefined
@@ -372,7 +372,7 @@ export function DiscordBotFeaturesBlock() {
         className="pointer-events-none absolute inset-0 opacity-30"
         aria-hidden
         style={{
-          backgroundImage: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(124,58,237,0.12), transparent)",
+          backgroundImage: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(37,99,235,0.14), transparent)",
         }}
       />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
@@ -381,7 +381,7 @@ export function DiscordBotFeaturesBlock() {
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-400/90"
+            className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-400/90"
           >
             {t("discordBotFeaturesTitle")}
           </motion.p>
@@ -409,7 +409,7 @@ export function DiscordBotFeaturesBlock() {
                   : {
                       y: -8,
                       scale: 1.02,
-                      boxShadow: "0 20px 50px rgba(0,0,0,0.45), 0 0 0 1px rgba(167,139,250,0.25)",
+                      boxShadow: "0 20px 50px rgba(0,0,0,0.45), 0 0 0 1px rgba(96,165,250,0.25)",
                     }
               }
               whileTap={reduceMotion ? undefined : { scale: 0.99 }}
@@ -420,13 +420,13 @@ export function DiscordBotFeaturesBlock() {
                   className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   style={{
                     background:
-                      "linear-gradient(135deg, rgba(167,139,250,0.35), transparent 40%, rgba(56,189,248,0.2))",
+                      "linear-gradient(135deg, rgba(96,165,250,0.35), transparent 40%, rgba(56,189,248,0.2))",
                   }}
                 />
               ) : null}
               <div className="relative">
                 <motion.div
-                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600/40 to-sky-600/30 text-white ring-1 ring-white/10"
+                  className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600/40 to-sky-600/30 text-white ring-1 ring-white/10"
                   whileHover={
                     reduceMotion
                       ? undefined
@@ -461,14 +461,14 @@ export function DiscordBotHowBlock() {
 
   return (
     <section className="relative py-20 sm:py-[5.5rem]">
-      <div className="pointer-events-none absolute inset-x-6 top-0 h-px max-w-6xl bg-gradient-to-r from-transparent via-violet-500/35 to-transparent sm:inset-x-auto sm:left-1/2 sm:w-full sm:max-w-4xl sm:-translate-x-1/2" />
+      <div className="pointer-events-none absolute inset-x-6 top-0 h-px max-w-6xl bg-gradient-to-r from-transparent via-blue-500/35 to-transparent sm:inset-x-auto sm:left-1/2 sm:w-full sm:max-w-4xl sm:-translate-x-1/2" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            className="text-xs font-semibold uppercase tracking-[0.28em] text-fuchsia-400/85"
+            className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-400/85"
           >
             {t("discordBotHowTitle")}
           </motion.p>
@@ -489,7 +489,7 @@ export function DiscordBotHowBlock() {
             aria-hidden
             style={{
               background:
-                "linear-gradient(90deg, transparent, rgba(167,139,250,0.5) 15%, rgba(56,189,248,0.45) 50%, rgba(167,139,250,0.5) 85%, transparent)",
+                "linear-gradient(90deg, transparent, rgba(96,165,250,0.5) 15%, rgba(56,189,248,0.45) 50%, rgba(96,165,250,0.5) 85%, transparent)",
             }}
           />
           <ol className="grid gap-6 md:grid-cols-3 md:gap-5 lg:gap-8">
@@ -504,10 +504,10 @@ export function DiscordBotHowBlock() {
               >
                 <div className="relative flex h-full flex-col rounded-[1.35rem] border border-white/[0.1] bg-gradient-to-b from-zinc-900/65 to-zinc-950/90 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/[0.05] backdrop-blur-md sm:p-7">
                   <div className="mb-5 flex items-center gap-3">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600/50 to-indigo-900/55 text-sm font-bold text-white shadow-inner shadow-black/20 ring-1 ring-white/15">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600/50 to-indigo-900/55 text-sm font-bold text-white shadow-inner shadow-black/20 ring-1 ring-white/15">
                       {s.n}
                     </div>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-violet-500/25 bg-violet-500/10 text-violet-200/90">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-500/25 bg-blue-500/10 text-blue-200/90">
                       <s.icon className="h-5 w-5" strokeWidth={1.65} aria-hidden />
                     </div>
                   </div>

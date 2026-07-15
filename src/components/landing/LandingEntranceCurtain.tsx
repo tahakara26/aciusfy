@@ -2,18 +2,12 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import dynamic from "next/dynamic";
 import { getGsap } from "@/lib/gsap-client";
 import { AciusfyLogoMark } from "@/components/branding/AciusfyLogoMark";
 import { AciusfyLandingWordmark } from "@/components/branding/AciusfyLandingWordmark";
 import { useTranslation } from "@/hooks/useTranslation";
 import { ENTRANCE_CURTAIN_KEYS } from "@/lib/entrance-curtain-session";
 import { useEntranceCurtainGate } from "@/hooks/useEntranceCurtainGate";
-
-const SpaceBackground = dynamic(
-  () => import("@/components/premium/SpaceBackground").then((m) => m.SpaceBackground),
-  { ssr: false },
-);
 
 const AUTO_MS = 2800;
 const AUTO_MS_REDUCED = 1800;
@@ -147,7 +141,7 @@ export function LandingEntranceCurtain({ onDismiss }: { onDismiss?: () => void }
   return createPortal(
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-[270] flex items-center justify-center overflow-hidden bg-[#09090b]"
+      className="fixed inset-0 z-[270] flex items-center justify-center overflow-hidden bg-[#050810]"
       style={{ clipPath: "circle(0% at 50% 50%)" }}
     >
       <button
@@ -158,12 +152,11 @@ export function LandingEntranceCurtain({ onDismiss }: { onDismiss?: () => void }
       />
 
       <div className="pointer-events-none absolute inset-0 z-0">
-        <SpaceBackground intensity="intro" className="absolute inset-0 opacity-95" />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 100% 80% at 50% -20%, rgba(255,255,255,0.06) 0%, transparent 55%)",
+              "radial-gradient(ellipse 100% 80% at 50% -20%, rgba(59,130,246,0.1) 0%, transparent 55%)",
           }}
         />
         <div

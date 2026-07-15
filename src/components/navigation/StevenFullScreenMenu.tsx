@@ -11,6 +11,7 @@ type StevenFullScreenMenuProps = {
   footer?: React.ReactNode;
   title?: string;
   subtitle?: string;
+  closeLabel?: string;
 };
 
 /** @deprecated use StevenActionMenu — kept for landing nav compatibility */
@@ -21,6 +22,7 @@ export function StevenFullScreenMenu({
   footer,
   title = "Menu",
   subtitle,
+  closeLabel,
 }: StevenFullScreenMenuProps) {
   return (
     <StevenActionMenu
@@ -30,6 +32,7 @@ export function StevenFullScreenMenu({
       footer={footer}
       title={title}
       subtitle={subtitle}
+      closeLabel={closeLabel}
     />
   );
 }

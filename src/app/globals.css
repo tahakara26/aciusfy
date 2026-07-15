@@ -15,19 +15,20 @@
   --font-playfair: var(--font-mona);
   --font-display: var(--font-mona);
 
-  --background: #09090b;
-  --foreground: #fafafa;
-  --card: #111113;
-  --card-hover: #18181b;
-  --border: rgba(255, 255, 255, 0.08);
-  --muted: #a1a1aa;
+  /* Aurora Midnight — koyu mavi-mor sinematik zemin */
+  --background: #070b14;
+  --foreground: #f3f6fc;
+  --card: #0d1421;
+  --card-hover: #131d2e;
+  --border: rgba(148, 176, 214, 0.10);
+  --muted: #93a4bd;
   --accent: #a78bfa;
-  --accent-secondary: #e4e4e7;
-  --accent-gradient: linear-gradient(135deg, #a78bfa 0%, #fafafa 50%, #a78bfa 100%);
+  --accent-secondary: #38bdf8;
+  --accent-gradient: linear-gradient(115deg, #a78bfa 0%, #6366f1 38%, #38bdf8 76%, #2dd4bf 100%);
   --success: #10b981;
-  --danger: #ef4444;
-  --player-bg: #111113;
-  --sidebar-bg: #09090b;
+  --danger: #f43f5e;
+  --player-bg: #0b1220;
+  --sidebar-bg: #070b14;
   --sidebar-width: 300px;
   --sidebar-collapsed-width: 64px;
   --player-height: 80px;
@@ -87,6 +88,20 @@
   --font-playfair: var(--font-mona);
   --color-slider-cream: #f5ebe0;
   --color-slider-cream-muted: #d4c9b8;
+  /* Aurora design system — yüzey + nadirlik utility'leri */
+  --color-surface-0: var(--surface-0);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-surface-4: var(--surface-4);
+  --color-violet: #a78bfa;
+  --color-sky: #38bdf8;
+  --color-teal: #2dd4bf;
+  --color-rarity-common: var(--rarity-common);
+  --color-rarity-rare: var(--rarity-rare);
+  --color-rarity-epic: var(--rarity-epic);
+  --color-rarity-legendary: var(--rarity-legendary);
+  --color-rarity-mythic: var(--rarity-mythic);
 }
 
 html {
@@ -287,12 +302,12 @@ body {
 }
 
 .premium-nav-bar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.82) 0%, rgba(9, 9, 11, 0.55) 100%);
+  border-bottom: 1px solid var(--hairline);
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.82) 0%, rgba(7, 11, 20, 0.55) 100%);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.04) inset,
-    0 12px 40px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(20px) saturate(140%);
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 12px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(22px) saturate(150%);
 }
 
 .premium-nav-offset {
@@ -300,56 +315,76 @@ body {
 }
 
 .premium-sidebar {
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.96) 0%, rgba(9, 9, 11, 0.99) 100%);
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px) saturate(140%);
+  background:
+    radial-gradient(120% 55% at 0% 0%, rgba(var(--violet-rgb) / 0.06), transparent 60%),
+    linear-gradient(180deg, rgba(8, 12, 21, 0.97) 0%, rgba(7, 11, 20, 0.99) 100%);
+  border-right: 1px solid var(--hairline);
+  backdrop-filter: blur(22px) saturate(150%);
 }
 
 .premium-sidebar-link {
+  position: relative;
   border-radius: 0.75rem;
-  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.25s var(--ease-out-expo), color 0.2s ease, box-shadow 0.25s ease;
 }
 
-.premium-sidebar-link[data-active="true"],
 .premium-sidebar-link:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(148, 176, 214, 0.06);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
+.premium-sidebar-link[data-active="true"] {
+  background: linear-gradient(90deg, rgba(var(--violet-rgb) / 0.16) 0%, rgba(var(--sky-rgb) / 0.05) 55%, transparent 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.premium-sidebar-link[data-active="true"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 58%;
+  width: 3px;
+  border-radius: 0 4px 4px 0;
+  background: var(--grad-aurora);
+  box-shadow: 0 0 10px rgba(var(--violet-rgb) / 0.7);
+}
+
 .premium-app-topbar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.78) 0%, rgba(9, 9, 11, 0.52) 100%);
-  backdrop-filter: blur(20px) saturate(140%);
+  border-bottom: 1px solid var(--hairline);
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.78) 0%, rgba(7, 11, 20, 0.5) 100%);
+  backdrop-filter: blur(22px) saturate(150%);
 }
 
 .premium-glass-card {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(17, 17, 19, 0.65);
+  border: 1px solid var(--hairline);
+  background: rgba(13, 20, 33, 0.65);
   backdrop-filter: blur(16px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.04) inset,
-    0 8px 32px rgba(0, 0, 0, 0.2);
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 8px 32px rgba(0, 0, 0, 0.28);
 }
 
 .premium-subnav-bar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.82) 0%, rgba(9, 9, 11, 0.58) 100%);
-  backdrop-filter: blur(20px) saturate(140%);
+  border-bottom: 1px solid var(--hairline);
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.82) 0%, rgba(7, 11, 20, 0.56) 100%);
+  backdrop-filter: blur(22px) saturate(150%);
 }
 
 .premium-dropdown-panel {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(165deg, rgba(24, 24, 27, 0.98) 0%, rgba(9, 9, 11, 0.98) 100%);
-  backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid var(--hairline-strong);
+  background: linear-gradient(165deg, rgba(19, 29, 46, 0.98) 0%, rgba(9, 14, 24, 0.98) 100%);
+  backdrop-filter: blur(24px) saturate(160%);
   box-shadow:
-    0 24px 64px rgba(0, 0, 0, 0.45),
+    0 24px 64px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .premium-now-playing-shell {
-  border-left: 1px solid rgba(255, 255, 255, 0.06);
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.94) 0%, rgba(9, 9, 11, 0.99) 100%);
-  backdrop-filter: blur(20px) saturate(140%);
+  border-left: 1px solid var(--hairline);
+  background: linear-gradient(180deg, rgba(8, 12, 21, 0.95) 0%, rgba(7, 11, 20, 0.99) 100%);
+  backdrop-filter: blur(22px) saturate(150%);
 }
 
 .gradient-text {
@@ -387,7 +422,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(161, 161, 170, 0.9);
+  color: rgba(147, 197, 253, 0.55);
 }
 
 .landing-headline {
@@ -408,18 +443,18 @@ body {
 }
 
 .landing-bento-card {
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.1);
   border-radius: 1.25rem;
-  background: rgba(17, 17, 19, 0.55);
+  background: rgba(10, 16, 28, 0.65);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.04) inset,
-    0 16px 48px rgba(0, 0, 0, 0.18);
+    0 1px 0 rgba(59, 130, 246, 0.06) inset,
+    0 16px 48px rgba(0, 0, 0, 0.22);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
 }
 
 .landing-bento-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  transform: translateY(-2px);
+  border-color: rgba(96, 165, 250, 0.22);
+  transform: translateY(-3px);
 }
 
 /* Aurora başlık — sadece geniş ekranda hafif kayma (mobilde sabit, flicker yok) */
@@ -556,4 +591,190 @@ body {
 /** Profil + pencere düğmeleri bloğu: boşluk tıklanınca sürükleme yemesin (frameless) */
 .aciusfy-electron-titlebar .aciusfy-electron-chrome {
   -webkit-app-region: no-drag;
+}
+
+/* ==========================================================================
+   AURORA DESIGN SYSTEM — Faz 1
+   Sinematik tasarım sistemi: yüzey/derinlik, gradyan, gölge, motion,
+   nadirlik ve animasyon primitive'leri. Mevcut token'ların üzerine ekler,
+   hiçbirini ezmeden. Yeni bileşenler bu katmanı kullanır.
+   ========================================================================== */
+
+/* Konik gradyan kenarları pürüzsüz döndürmek için tiplenmiş açı */
+@property --aurora-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+:root {
+  /* --- Marka renk kanalları (rgba() üretimi için) --- */
+  --violet-rgb: 167 139 250;   /* #a78bfa */
+  --indigo-rgb: 99 102 241;    /* #6366f1 */
+  --sky-rgb: 56 189 248;       /* #38bdf8 */
+  --teal-rgb: 45 212 191;      /* #2dd4bf */
+
+  /* --- Yüzey / derinlik skalası --- */
+  --surface-0: #070b14;
+  --surface-1: #0b1220;
+  --surface-2: #0d1421;
+  --surface-3: #131d2e;
+  --surface-4: #1a2740;
+  --surface-glass: rgba(13, 20, 33, 0.62);
+  --hairline: rgba(148, 176, 214, 0.10);
+  --hairline-strong: rgba(148, 176, 214, 0.18);
+
+  /* --- Gradyan sistemi --- */
+  --grad-aurora: linear-gradient(115deg, #a78bfa 0%, #6366f1 38%, #38bdf8 76%, #2dd4bf 100%);
+  --grad-aurora-soft: linear-gradient(115deg, rgba(167,139,250,0.9), rgba(56,189,248,0.85) 70%, rgba(45,212,191,0.8));
+  --grad-violet: linear-gradient(135deg, #c4b5fd, #7c3aed);
+  --grad-sky: linear-gradient(135deg, #7dd3fc, #0ea5e9);
+  --grad-hero-radial: radial-gradient(1200px 640px at 78% -8%, rgba(var(--violet-rgb) / 0.14), transparent 62%),
+                      radial-gradient(900px 520px at 0% 108%, rgba(var(--teal-rgb) / 0.08), transparent 58%);
+
+  /* --- Gölge / glow skalası --- */
+  --shadow-1: 0 1px 2px rgba(0,0,0,0.30);
+  --shadow-2: 0 8px 28px -10px rgba(0,0,0,0.55);
+  --shadow-3: 0 24px 64px -16px rgba(0,0,0,0.60);
+  --glow-violet: 0 0 32px -6px rgba(var(--violet-rgb) / 0.55);
+  --glow-sky: 0 0 32px -6px rgba(var(--sky-rgb) / 0.55);
+  --glow-teal: 0 0 32px -6px rgba(var(--teal-rgb) / 0.50);
+
+  /* --- Radius skalası --- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-2xl: 36px;
+  --r-pill: 9999px;
+
+  /* --- Motion: easing + süreler --- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 0.18s;
+  --dur: 0.32s;
+  --dur-slow: 0.6s;
+  --dur-cine: 0.9s;
+
+  /* --- Nadirlik (rozetler + çerçeveler) --- */
+  --rarity-common: #64748b;
+  --rarity-rare: #38bdf8;
+  --rarity-epic: #a78bfa;
+  --rarity-legendary: #f5c451;
+  --rarity-mythic: #ff6bd6;
+  --rarity-common-glow: rgba(100, 116, 139, 0.45);
+  --rarity-rare-glow: rgba(56, 189, 248, 0.55);
+  --rarity-epic-glow: rgba(167, 139, 250, 0.60);
+  --rarity-legendary-glow: rgba(245, 196, 81, 0.60);
+  --rarity-mythic-glow: rgba(255, 107, 214, 0.65);
+}
+
+/* --------------------------------------------------------------------------
+   Sinematik animasyon primitive'leri
+   -------------------------------------------------------------------------- */
+
+@keyframes cine-aurora-sweep {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes cine-shimmer {
+  0% { transform: translateX(-130%); }
+  100% { transform: translateX(130%); }
+}
+@keyframes cine-glow-breathe {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+@keyframes cine-float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes cine-conic-spin {
+  to { --aurora-angle: 360deg; }
+}
+@keyframes cine-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes cine-reveal-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Aurora gradyan metin */
+.cine-aurora-text {
+  background: linear-gradient(115deg, #c4b5fd, #7dd3fc 45%, #5eead4 75%, #c4b5fd);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: cine-aurora-sweep 8s ease-in-out infinite;
+}
+
+/* Işık süpürmesi (buton / kart hover, iskelet) */
+.cine-shimmer { position: relative; overflow: hidden; }
+.cine-shimmer::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%);
+  transform: translateX(-130%);
+  animation: cine-shimmer 2.8s var(--ease-out-expo) infinite;
+}
+
+/* Nabız atan glow */
+.cine-glow { animation: cine-glow-breathe 3.2s ease-in-out infinite; }
+
+/* Yumuşak süzülme */
+.cine-float { animation: cine-float-soft 5s ease-in-out infinite; }
+
+/* Yavaş dönüş (orbital / mühür) */
+.cine-spin-slow { animation: cine-spin 12s linear infinite; }
+
+/* Animasyonlu konik gradyan kenar — .cine-border > içerik */
+.cine-border {
+  position: relative;
+  border-radius: inherit;
+}
+.cine-border::before {
+  content: "";
+  position: absolute; inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--aurora-angle),
+    rgba(var(--violet-rgb) / 0.9), rgba(var(--sky-rgb) / 0.9),
+    rgba(var(--teal-rgb) / 0.9), rgba(var(--violet-rgb) / 0.9));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: cine-conic-spin 6s linear infinite;
+  pointer-events: none;
+}
+
+/* Sahneye giriş — JS'siz reveal (IntersectionObserver ile data-inview de kullanılabilir) */
+.cine-reveal { animation: cine-reveal-up var(--dur-cine) var(--ease-out-expo) both; }
+
+/* Cam yüzey — yeni bileşenler için tek kaynak */
+.aurora-glass {
+  background: var(--surface-glass);
+  border: 1px solid var(--hairline);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), var(--shadow-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cine-aurora-text, .cine-shimmer::after, .cine-glow, .cine-float,
+  .cine-spin-slow, .cine-border::before, .cine-reveal {
+    animation: none !important;
+  }
+  .cine-aurora-text { background-position: 50% 50%; }
+}
+
+/* Mobil GPU: pahalı sürekli animasyonları kıs */
+@media (max-width: 1023px) {
+  .cine-border::before, .cine-shimmer::after, .cine-spin-slow {
+    animation: none !important;
+  }
 }

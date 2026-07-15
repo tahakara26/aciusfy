@@ -190,7 +190,7 @@ export function PlayerBar() {
       )}
     <footer
       data-aciusfy-player-bar
-      className="fixed bottom-[calc(var(--player-bottom-offset)+6px)] left-2 right-2 z-[var(--z-player)] h-[var(--player-height)] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a]/60 shadow-[0_8px_40px_rgba(0,0,0,0.45)] backdrop-blur-2xl sm:left-4 sm:right-4 lg:left-6 lg:right-6"
+      className="fixed bottom-[calc(var(--player-bottom-offset)+6px)] left-2 right-2 z-[var(--z-player)] h-[var(--player-height)] shrink-0 overflow-hidden rounded-2xl border border-[color:var(--hairline)] bg-[#0a0e18]/65 shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl sm:left-4 sm:right-4 lg:left-6 lg:right-6"
     >
       <div className="grid h-full min-h-0 w-full grid-cols-[minmax(0,1fr)_minmax(0,2fr)_minmax(0,1fr)] items-center gap-x-1.5 px-1.5 max-lg:gap-x-2 max-lg:px-2 max-lg:py-0 sm:gap-x-3 sm:px-4 sm:py-0 lg:grid-cols-[1fr_minmax(0,min(100%,722px))_1fr]">
         
@@ -287,7 +287,7 @@ export function PlayerBar() {
               whileTap={{ scale: 0.95 }}
               onClick={handlePlayPause}
               disabled={!activeSong}
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.15)] transition-shadow hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] disabled:opacity-40 lg:h-8 lg:w-8"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black shadow-[0_0_16px_rgba(167,139,250,0.3)] transition-shadow hover:shadow-[0_0_28px_rgba(167,139,250,0.5)] disabled:opacity-40 lg:h-8 lg:w-8"
               title={isPlaying ? t("pause") : t("play")}
             >
               {isPlaying ? (
@@ -344,7 +344,7 @@ export function PlayerBar() {
             </span>
             <div className="group relative h-1 flex-1 rounded-full bg-white/10">
               <div
-                className="absolute left-0 top-0 h-full rounded-full bg-foreground transition-colors group-hover:bg-foreground/80"
+                className="absolute left-0 top-0 h-full rounded-full [background:var(--grad-aurora)] shadow-[0_0_8px_rgba(167,139,250,0.45)]"
                 style={{ width: `${progressPercent}%` }}
               />
               <input
@@ -441,7 +441,7 @@ export function PlayerBar() {
             </motion.button>
             <div className="group relative h-1 w-24 rounded-full bg-white/10">
               <div
-                className="absolute left-0 top-0 h-full rounded-full bg-foreground transition-colors group-hover:bg-foreground/80"
+                className="absolute left-0 top-0 h-full rounded-full [background:var(--grad-aurora)] shadow-[0_0_8px_rgba(167,139,250,0.45)]"
                 style={{ width: `${volumePercent}%` }}
               />
               <input

@@ -1,5 +1,6 @@
-import { devLog, devWarn, devError } from "@/lib/dev-log";
 "use client";
+
+import { devLog, devWarn, devError } from "@/lib/dev-log";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRefreshInterval } from "@/hooks/useRefreshInterval";
@@ -448,8 +449,8 @@ export default function PlaylistPage() {
     <div className="space-y-8">
       <ScrollReveal>
         
-        <div className="-mx-3 -mt-3 overflow-hidden rounded-b-2xl bg-gradient-to-br from-indigo-950/70 via-slate-950/80 to-zinc-950 ring-1 ring-white/[0.06] ring-inset sm:-mx-6 sm:-mt-4">
-          <div className="bg-gradient-to-b from-blue-950/30 to-transparent px-4 pb-8 pt-7 sm:px-8 sm:pb-10 sm:pt-9">
+        <div className="-mx-3 -mt-3 overflow-hidden rounded-b-2xl bg-gradient-to-br from-[#1a1440]/75 via-[#0b1220]/85 to-[#070b14] ring-1 ring-[color:var(--hairline)] ring-inset sm:-mx-6 sm:-mt-4">
+          <div className="bg-gradient-to-b from-[rgba(167,139,250,0.14)] via-[rgba(56,189,248,0.05)] to-transparent px-4 pb-8 pt-7 sm:px-8 sm:pb-10 sm:pt-9">
             <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-end">
           <button
             type="button"

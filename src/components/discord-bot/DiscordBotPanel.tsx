@@ -173,7 +173,7 @@ export function DiscordBotPanel() {
       </div>
       <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
         <motion.div
-          className="absolute -left-1/4 top-0 h-[480px] w-[480px] rounded-full bg-violet-600/20 blur-[120px]"
+          className="absolute -left-1/4 top-0 h-[480px] w-[480px] rounded-full bg-blue-600/20 blur-[120px]"
           animate={
             reduceMotion
               ? undefined
@@ -182,7 +182,7 @@ export function DiscordBotPanel() {
           transition={{ type: "tween", duration: 16, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -right-1/4 top-1/3 h-[400px] w-[400px] rounded-full bg-fuchsia-600/15 blur-[100px]"
+          className="absolute -right-1/4 top-1/3 h-[400px] w-[400px] rounded-full bg-sky-600/15 blur-[100px]"
           animate={reduceMotion ? undefined : { x: [0, -40, 0], y: [0, 20, 0] }}
           transition={{ type: "tween", duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -193,7 +193,7 @@ export function DiscordBotPanel() {
           }
           transition={{ type: "tween", duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_-10%,rgba(124,58,237,0.12),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_-10%,rgba(37,99,235,0.14),transparent)]" />
       </div>
 
       <div className="relative z-10">
@@ -276,13 +276,13 @@ export function DiscordBotPanel() {
             whileHover={
               reduceMotion
                 ? undefined
-                : { boxShadow: "0 25px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(167,139,250,0.12)" }
+                : { boxShadow: "0 25px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(96,165,250,0.12)" }
             }
             className="rounded-3xl border border-white/[0.11] bg-gradient-to-b from-zinc-900/55 via-zinc-950/80 to-[#08080f] p-6 shadow-[0_28px_80px_rgba(0,0,0,0.55)] ring-1 ring-white/[0.04] backdrop-blur-xl sm:p-8"
           >
             {user === undefined ? (
               <div className="flex justify-center py-20">
-                <div className="h-10 w-10 animate-spin rounded-full border-2 border-violet-500 border-t-transparent" />
+                <div className="h-10 w-10 animate-spin rounded-full border-2 border-blue-500 border-t-transparent" />
               </div>
             ) : !user ? (
               <div className="flex flex-col items-center gap-8 py-12 text-center">
@@ -326,10 +326,10 @@ export function DiscordBotPanel() {
                         alt=""
                         width={52}
                         height={52}
-                        className="h-[52px] w-[52px] shrink-0 rounded-full ring-2 ring-violet-500/30"
+                        className="h-[52px] w-[52px] shrink-0 rounded-full ring-2 ring-blue-500/30"
                       />
                     ) : (
-                      <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-violet-600/40 text-xl font-medium text-white ring-2 ring-violet-500/30">
+                      <div className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full bg-blue-600/40 text-xl font-medium text-white ring-2 ring-blue-500/30">
                         {user.username.slice(0, 1).toUpperCase()}
                       </div>
                     )}
@@ -342,7 +342,7 @@ export function DiscordBotPanel() {
                 </div>
 
                 <div>
-                  <h3 className="mb-1 text-xs font-semibold uppercase tracking-wider text-violet-300/90">
+                  <h3 className="mb-1 text-xs font-semibold uppercase tracking-wider text-blue-300/90">
                     {t("discordBotPickServer")}
                   </h3>
                   <p className="mb-4 text-xs text-zinc-500">{t("discordBotPickServerLead")}</p>
@@ -394,7 +394,7 @@ export function DiscordBotPanel() {
                           key={g.id}
                           href={`/discord-bot/${g.id}`}
                           aria-label={`${g.name} — ${t("discordBotOpenGuildPanelAria")}`}
-                          className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-3 py-3.5 text-left transition hover:border-violet-500/40 hover:bg-violet-500/10 hover:ring-1 hover:ring-violet-500/15"
+                          className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-3 py-3.5 text-left transition hover:border-blue-500/40 hover:bg-blue-500/10 hover:ring-1 hover:ring-blue-500/15"
                         >
                           {g.iconUrl ? (
                             <Image

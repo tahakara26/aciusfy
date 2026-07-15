@@ -1,5 +1,6 @@
-import { devLog, devWarn, devError } from "@/lib/dev-log";
 "use client";
+
+import { devLog, devWarn, devError } from "@/lib/dev-log";
 
 import { useEffect, useId, useRef, useState } from "react";
 import { getAdSenseClientId, isAdSenseEnabled, shouldRenderAdUnit } from "@/lib/adsense";

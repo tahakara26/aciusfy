@@ -12,6 +12,7 @@ import "lenis/dist/lenis.css";
 import "./globals.css";
 import "@/styles/light-theme.css";
 import "@/styles/badge-animations.css";
+import "@/styles/badge-medal.css";
 import "@/styles/decoration-animations.css";
 
 export const metadata: Metadata = {

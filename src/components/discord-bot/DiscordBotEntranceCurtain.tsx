@@ -3,7 +3,6 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import dynamic from "next/dynamic";
 import { Server } from "lucide-react";
 import { AciusfyLogoMark } from "@/components/branding/AciusfyLogoMark";
 import { DiscordGlyph } from "@/components/discord-bot/DiscordGlyph";
@@ -13,11 +12,6 @@ import { useEntranceCurtainGate } from "@/hooks/useEntranceCurtainGate";
 import { ENTRANCE_CURTAIN_KEYS } from "@/lib/entrance-curtain-session";
 import { getDiscordBotInviteHref } from "@/lib/discord-bot-invite";
 import { cn } from "@/lib/utils";
-
-const SpaceBackground = dynamic(
-  () => import("@/components/premium/SpaceBackground").then((m) => m.SpaceBackground),
-  { ssr: false },
-);
 
 const AUTO_MS = 2800;
 const AUTO_MS_REDUCED = 1800;
@@ -101,13 +95,22 @@ export function DiscordBotEntranceCurtain({ onDismiss }: { onDismiss?: () => voi
             onClick={runFinish}
           />
 
-          <div className="pointer-events-none absolute inset-0 z-0 bg-[#030510]">
-            <SpaceBackground intensity="intro" className="absolute inset-0 opacity-90" />
+          <div className="pointer-events-none absolute inset-0 z-0 bg-[#050810]">
+            <div
+              className="absolute inset-0 opacity-[0.12]"
+              style={{
+                backgroundImage: `
+                  linear-gradient(rgba(59,130,246,0.08) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(59,130,246,0.06) 1px, transparent 1px)
+                `,
+                backgroundSize: "64px 64px",
+              }}
+            />
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "radial-gradient(ellipse 70% 50% at 50% 35%, rgba(88,101,242,0.18) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 80% 80%, rgba(124,58,237,0.12) 0%, transparent 50%)",
+                  "radial-gradient(ellipse 70% 50% at 50% 35%, rgba(88,101,242,0.2) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 80% 80%, rgba(37,99,235,0.12) 0%, transparent 50%)",
               }}
             />
           </div>
@@ -147,7 +150,7 @@ export function DiscordBotEntranceCurtain({ onDismiss }: { onDismiss?: () => voi
               <motion.div
                 className={cn(
                   ICON_TILE,
-                  "border border-white/10 bg-white/[0.04] shadow-[0_0_32px_rgba(124,58,237,0.2)]",
+                  "border border-white/10 bg-white/[0.04] shadow-[0_0_32px_rgba(37,99,235,0.2)]",
                 )}
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -158,7 +161,7 @@ export function DiscordBotEntranceCurtain({ onDismiss }: { onDismiss?: () => voi
                   alt=""
                   priority
                   className="flex h-full w-full items-center justify-center"
-                  imgClassName="!max-h-[1.75rem] !max-w-[1.75rem] sm:!max-h-8 sm:!max-w-8 drop-shadow-[0_0_12px_rgba(168,85,247,0.35)]"
+                  imgClassName="!max-h-[1.75rem] !max-w-[1.75rem] sm:!max-h-8 sm:!max-w-8 drop-shadow-[0_0_12px_rgba(59,130,246,0.35)]"
                 />
               </motion.div>
             </div>

@@ -131,11 +131,14 @@ export function MobileBottomNav() {
                 key={key}
                 href={href!}
                 className={cn(
-                  "flex h-full flex-col items-center justify-center gap-0.5 rounded-lg py-1 transition-colors",
+                  "relative flex h-full flex-col items-center justify-center gap-0.5 rounded-lg py-1 transition-colors",
                   active ? "text-foreground" : "text-muted hover:text-foreground/70"
                 )}
                 aria-current={active ? "page" : undefined}
               >
+                {active && (
+                  <span className="pointer-events-none absolute top-0 left-1/2 h-[3px] w-7 -translate-x-1/2 rounded-full [background:var(--grad-aurora)] shadow-[0_0_8px_rgba(167,139,250,0.6)]" />
+                )}
                 <Icon className={cn("h-[22px] w-[22px] shrink-0", active && "text-foreground")} />
                 <span className="max-w-full truncate px-0.5 text-[9px] font-semibold leading-none tracking-tight">
                   {label}

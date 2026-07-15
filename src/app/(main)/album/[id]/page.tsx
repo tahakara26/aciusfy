@@ -1,5 +1,6 @@
-import { devLog, devWarn, devError } from "@/lib/dev-log";
 "use client";
+
+import { devLog, devWarn, devError } from "@/lib/dev-log";
 
 import { useEffect, useState, useCallback } from "react";
 import { useRefreshInterval } from "@/hooks/useRefreshInterval";

@@ -10,7 +10,6 @@ import { formatMessageBadgeCount, useMessageUnreadTotal } from "@/hooks/useMessa
 import { NotificationBell } from "@/components/layout/NotificationBell";
 import { YoutubeSuggestNavLink } from "@/components/layout/YoutubeSuggestNavLink";
 import { DesktopWindowControls } from "@/components/layout/DesktopWindowControls";
-import { StevenClockStrip } from "@/components/navigation/StevenClockStrip";
 import { StevenProfileMenu } from "@/components/navigation/StevenProfileMenu";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -111,7 +110,7 @@ export function TopNavbar() {
               }
             }}
             placeholder={t("searchPlaceholder")}
-            className="relative w-full max-w-xl border-0 border-b border-white/10 bg-transparent py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted focus:border-white/30 focus:outline-none"
+            className="relative w-full max-w-xl border-0 border-b border-[color:var(--hairline)] bg-transparent py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted transition-colors focus:border-[color:var(--accent)] focus:outline-none"
           />
         </div>
       ) : (
@@ -119,7 +118,6 @@ export function TopNavbar() {
       )}
 
       <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-3">
-        <StevenClockStrip />
         <YoutubeSuggestNavLink />
         {session?.user?.id ? <NotificationBell /> : null}
         {session?.user?.id ? (

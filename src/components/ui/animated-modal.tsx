@@ -5,7 +5,6 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { X } from "lucide-react";
 import { useRef } from "react";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
-import { StevenClockStrip } from "@/components/navigation/StevenClockStrip";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -61,10 +60,11 @@ export function AnimatedModal({
             )}
           >
             <div className="flex items-center justify-between gap-3 border-b border-white/[0.06] px-5 py-4 sm:px-6">
-              <StevenClockStrip className="!flex" />
               {title ? (
-                <p className="hidden font-mono text-[10px] uppercase tracking-[0.18em] text-muted sm:block">{title}</p>
-              ) : null}
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">{title}</p>
+              ) : (
+                <span aria-hidden />
+              )}
               <button
                 type="button"
                 onClick={onClose}
