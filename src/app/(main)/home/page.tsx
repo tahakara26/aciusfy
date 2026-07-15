@@ -506,7 +506,7 @@ export default function HomePage() {
         <h1 className="font-display text-[clamp(2rem,5vw,3.25rem)] leading-[0.95] tracking-[-0.03em] text-foreground">
           {greeting}
           {userName ? (
-            <span className="text-muted">, {userName}</span>
+            <span className="cine-aurora-text">, {userName}</span>
           ) : null}
         </h1>
       </motion.div>
@@ -522,8 +522,8 @@ export default function HomePage() {
             onClick={() => setFilter(f.id)}
             className={`rounded-full px-5 py-2 text-xs font-medium uppercase tracking-[0.12em] transition-all ${
               filter === f.id
-                ? "bg-foreground text-background"
-                : "border border-white/10 text-muted hover:border-white/25 hover:text-foreground"
+                ? "[background:var(--grad-aurora)] text-white shadow-[0_2px_14px_rgba(167,139,250,0.4)]"
+                : "border border-white/10 text-muted hover:border-[color:rgba(167,139,250,0.4)] hover:text-foreground"
             }`}
           >
             {f.label}
@@ -658,8 +658,8 @@ export default function HomePage() {
       
       <section>
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-lg font-bold tracking-tight text-white">{userName} {t("forYouCompiled")}</h2>
-          <Link href="/recommendations" className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-white hover:underline">
+          <h2 className="text-lg font-bold tracking-tight text-white border-l-2 border-[color:var(--accent)] pl-3">{userName} {t("forYouCompiled")}</h2>
+          <Link href="/recommendations" className="flex items-center gap-1 text-sm font-semibold text-muted transition-colors hover:text-[color:var(--accent)]">
             {t("showAll")} <ChevronRight className="h-4 w-4" />
           </Link>
         </div>
@@ -680,8 +680,8 @@ export default function HomePage() {
       {dailySections.filter((s) => s.sectionType === "genre").length > 0 && (
         <section>
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-bold tracking-tight text-white">{t("topHitsToday") ?? "Bugünün en çok dinlenenleri"}</h2>
-            <Link href="/search" className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-white hover:underline">
+            <h2 className="text-lg font-bold tracking-tight text-white border-l-2 border-[color:var(--accent)] pl-3">{t("topHitsToday") ?? "Bugünün en çok dinlenenleri"}</h2>
+            <Link href="/search" className="flex items-center gap-1 text-sm font-semibold text-muted transition-colors hover:text-[color:var(--accent)]">
               {t("showAll")} <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
@@ -741,7 +741,7 @@ export default function HomePage() {
       {(generatedMixes.length > 0 || loadingMixes) && (
         <section>
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-bold tracking-tight text-white">{t("radioAndMixes") ?? "Radyo ve Mix'ler"}</h2>
+            <h2 className="text-lg font-bold tracking-tight text-white border-l-2 border-[color:var(--accent)] pl-3">{t("radioAndMixes") ?? "Radyo ve Mix'ler"}</h2>
           </div>
           {loadingMixes ? (
             <HorizontalScroll>
@@ -830,7 +830,7 @@ export default function HomePage() {
       {(moods.length > 0 || loadingMoods) && (
         <section>
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-bold tracking-tight text-white">{t("moodCategories") ?? "Ruh haline göre"}</h2>
+            <h2 className="text-lg font-bold tracking-tight text-white border-l-2 border-[color:var(--accent)] pl-3">{t("moodCategories") ?? "Ruh haline göre"}</h2>
           </div>
           {loadingMoods ? (
             <HorizontalScroll>
@@ -865,7 +865,7 @@ export default function HomePage() {
       {showFriendsSection && (friendsActivity.length > 0 || loadingFriends) && (
         <section>
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="flex items-center gap-2 text-lg font-bold tracking-tight text-white">
+            <h2 className="flex items-center gap-2 text-lg font-bold tracking-tight text-white border-l-2 border-[color:var(--accent)] pl-3">
               <Users className="h-5 w-5" />
               {t("friendsActivity")}
             </h2>
@@ -942,10 +942,10 @@ export default function HomePage() {
         <section>
           <div className="mb-4 flex items-center justify-between">
             <div>
-              <h2 className="text-lg font-bold tracking-tight text-white">{t("homeDiscoverUniqueTitle")}</h2>
+              <h2 className="text-lg font-bold tracking-tight text-white border-l-2 border-[color:var(--accent)] pl-3">{t("homeDiscoverUniqueTitle")}</h2>
               <p className="text-xs text-muted">{t("homeDiscoverUniqueSubtitle")}</p>
             </div>
-            <Link href="/recently-played" className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-white hover:underline">
+            <Link href="/recently-played" className="flex items-center gap-1 text-sm font-semibold text-muted transition-colors hover:text-[color:var(--accent)]">
               {t("showAll")} <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
@@ -976,8 +976,8 @@ export default function HomePage() {
       {(recentlyPlayed.length > 0 || loadingRecent) && (
         <section>
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-bold tracking-tight text-white">{t("recentlyPlayed")}</h2>
-            <Link href="/recently-played" className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-white hover:underline">
+            <h2 className="text-lg font-bold tracking-tight text-white border-l-2 border-[color:var(--accent)] pl-3">{t("recentlyPlayed")}</h2>
+            <Link href="/recently-played" className="flex items-center gap-1 text-sm font-semibold text-muted transition-colors hover:text-[color:var(--accent)]">
               {t("showAll")} <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
@@ -1008,8 +1008,8 @@ export default function HomePage() {
       {(loadingRecs || recommendations.length > 0) && (
         <section>
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-bold tracking-tight text-white">{t("forYouRecommendations")}</h2>
-            <Link href="/recommendations" className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-white hover:underline">
+            <h2 className="text-lg font-bold tracking-tight text-white border-l-2 border-[color:var(--accent)] pl-3">{t("forYouRecommendations")}</h2>
+            <Link href="/recommendations" className="flex items-center gap-1 text-sm font-semibold text-muted transition-colors hover:text-[color:var(--accent)]">
               {t("showAll")} <ChevronRight className="h-4 w-4" />
             </Link>
           </div>

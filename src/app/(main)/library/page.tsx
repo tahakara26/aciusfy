@@ -732,7 +732,7 @@ export default function LibraryPage() {
               className={cn(
                 "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all",
                 activeTab === tab.id
-                  ? "bg-white text-black"
+                  ? "[background:var(--grad-aurora)] text-white shadow-[0_2px_12px_rgba(167,139,250,0.35)]"
                   : "bg-white/5 text-muted hover:bg-white/10 hover:text-white"
               )}
             >

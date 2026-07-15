@@ -43,7 +43,7 @@ export function AnimatedModal({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-[#09090b]/80 backdrop-blur-xl"
+            className="absolute inset-0 bg-[#050810]/82 backdrop-blur-xl"
             onClick={onClose}
             aria-hidden
           />
@@ -55,11 +55,11 @@ export function AnimatedModal({
             exit={noScaleAnimation || reduceMotion ? { opacity: 0, y: 16 } : { opacity: 0, y: 24, scale: 0.96 }}
             transition={{ duration: 0.4, ease }}
             className={cn(
-              "relative z-10 flex w-full max-w-2xl flex-col overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-[#09090b]/95 shadow-[0_32px_80px_rgba(0,0,0,0.5)]",
+              "relative z-10 flex w-full max-w-2xl flex-col overflow-hidden rounded-[1.75rem] border border-[color:var(--hairline-strong)] [background:linear-gradient(165deg,rgba(19,29,46,0.97),rgba(9,14,24,0.97))] shadow-[0_32px_80px_rgba(0,0,0,0.55)]",
               className,
             )}
           >
-            <div className="flex items-center justify-between gap-3 border-b border-white/[0.06] px-5 py-4 sm:px-6">
+            <div className="flex items-center justify-between gap-3 border-b border-[color:var(--hairline)] px-5 py-4 sm:px-6">
               {title ? (
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">{title}</p>
               ) : (

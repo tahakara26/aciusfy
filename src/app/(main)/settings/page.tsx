@@ -512,7 +512,7 @@ function Toggle({
       onClick={() => onChange(!checked)}
       className={cn(
         "relative h-6 w-11 shrink-0 rounded-full transition-all duration-200",
-        checked ? "bg-gradient-to-r from-purple-500 to-emerald-500 shadow-[0_0_12px_rgba(168,85,247,0.25)]" : "bg-white/10 ring-1 ring-white/[0.06]"
+        checked ? "[background:var(--grad-aurora)] shadow-[0_0_12px_rgba(167,139,250,0.35)]" : "bg-white/10 ring-1 ring-white/[0.06]"
       )}
     >
       <motion.div
@@ -831,7 +831,7 @@ function SettingsContent() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={t("searchSettings")}
-            className="w-full rounded-xl border-0 bg-white/[0.04] py-2.5 pl-10 pr-4 text-sm text-white ring-1 ring-white/[0.06] transition-all placeholder:text-white/20 focus:bg-white/[0.06] focus:outline-none focus:ring-purple-500/40"
+            className="w-full rounded-xl border-0 bg-white/[0.04] py-2.5 pl-10 pr-4 text-sm text-white ring-1 ring-white/[0.06] transition-all placeholder:text-white/20 focus:bg-white/[0.06] focus:outline-none focus:ring-[color:rgba(167,139,250,0.45)]"
           />
         </div>
       </motion.div>

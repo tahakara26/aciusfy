@@ -128,7 +128,7 @@ export default function StatsPage() {
               onClick={() => setPeriod("week")}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                 period === "week"
-                  ? "bg-white text-black"
+                  ? "[background:var(--grad-aurora)] text-white shadow-[0_2px_12px_rgba(167,139,250,0.35)]"
                   : "bg-white/10 text-white hover:bg-white/20"
               }`}
             >
@@ -139,7 +139,7 @@ export default function StatsPage() {
               onClick={() => setPeriod("month")}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                 period === "month"
-                  ? "bg-white text-black"
+                  ? "[background:var(--grad-aurora)] text-white shadow-[0_2px_12px_rgba(167,139,250,0.35)]"
                   : "bg-white/10 text-white hover:bg-white/20"
               }`}
             >

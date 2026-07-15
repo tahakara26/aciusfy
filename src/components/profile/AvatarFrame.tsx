@@ -156,7 +156,7 @@ export function AvatarFrame({
           {avatarDisplaySrc ? (
             <Image src={avatarDisplaySrc} alt={alt} fill sizes={`${size}px`} className="object-cover" />
           ) : (
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-purple-500/20 to-emerald-500/20 text-4xl font-bold text-white/60">
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-violet-500/25 to-sky-500/20 text-4xl font-bold text-white/60">
               {fallbackInitial}
             </div>
           )}
@@ -223,7 +223,7 @@ export function AvatarFrame({
               {avatarDisplaySrc ? (
                 <Image src={avatarDisplaySrc} alt={alt} fill sizes={`${size}px`} className="object-cover" />
               ) : (
-                <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-purple-500/20 to-emerald-500/20 text-4xl font-bold text-white/60">
+                <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-violet-500/25 to-sky-500/20 text-4xl font-bold text-white/60">
                   {fallbackInitial}
                 </div>
               )}
@@ -257,7 +257,7 @@ export function AvatarFrame({
           {avatarDisplaySrc ? (
             <Image src={avatarDisplaySrc} alt={alt} fill sizes={`${size}px`} className="object-cover" />
           ) : (
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-purple-500/20 to-emerald-500/20 text-4xl font-bold text-white/60">
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-violet-500/25 to-sky-500/20 text-4xl font-bold text-white/60">
               {fallbackInitial}
             </div>
           )}
@@ -295,7 +295,7 @@ export function AvatarFrame({
         {avatarDisplaySrc ? (
           <Image src={avatarDisplaySrc} alt={alt} fill sizes={`${size}px`} className="object-cover" />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-purple-500/20 to-emerald-500/20 text-4xl font-bold text-white/60">
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-violet-500/25 to-sky-500/20 text-4xl font-bold text-white/60">
             {fallbackInitial}
           </div>
         )}

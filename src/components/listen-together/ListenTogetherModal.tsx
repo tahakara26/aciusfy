@@ -93,7 +93,7 @@ export function ListenTogetherModal({ open, onClose }: ListenTogetherModalProps)
                 onChange={(e) => setJoinCode(e.target.value.toUpperCase().slice(0, 6))}
                 placeholder={t("enterCode")}
                 maxLength={6}
-                className="flex-1 rounded-full border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-center font-mono text-lg tracking-[0.3em] text-white placeholder-white/20 transition focus:outline-none focus:ring-1 focus:ring-purple-500/50"
+                className="flex-1 rounded-full border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-center font-mono text-lg tracking-[0.3em] text-white placeholder-white/20 transition focus:outline-none focus:ring-1 focus:ring-[color:rgba(167,139,250,0.5)]"
               />
               <button
                 onClick={handleJoin}

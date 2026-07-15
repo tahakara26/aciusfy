@@ -372,7 +372,7 @@ export function AppSidebar() {
               title={collapsed ? t("likedSongs") : undefined}
             >
               <div className={cn(
-                "flex flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-purple-700 to-cyan-400",
+                "flex flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-br from-violet-600 to-sky-400",
                 collapsed ? "h-9 w-9" : "h-12 w-12"
               )}>
                 <Heart className={cn("fill-white text-white", collapsed ? "h-4 w-4" : "h-5 w-5")} />

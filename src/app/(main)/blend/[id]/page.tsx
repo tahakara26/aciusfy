@@ -501,7 +501,7 @@ export default function BlendPage() {
           animate={{ opacity: 1, y: 0 }}
           className="relative mb-8 overflow-hidden rounded-3xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-8 ring-1 ring-white/10 backdrop-blur-sm"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-emerald-500/5" />
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-teal-400/5" />
 
           <div className="relative flex flex-col items-center gap-5 text-center">
             
@@ -591,7 +591,7 @@ export default function BlendPage() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             className="mb-8 overflow-hidden rounded-3xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] ring-1 ring-white/10 backdrop-blur-sm"
           >
-            <div className="bg-gradient-to-r from-purple-500/10 via-transparent to-emerald-500/10 p-8 text-center">
+            <div className="bg-gradient-to-r from-purple-500/10 via-transparent to-teal-400/10 p-8 text-center">
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-purple-500/15 px-4 py-1.5 text-xs font-medium text-purple-300 ring-1 ring-purple-500/20">
                 <Sparkles className="h-3.5 w-3.5" />
                 Blend Daveti
@@ -662,7 +662,7 @@ export default function BlendPage() {
               onClick={() => setShowStory(true)}
               className="group relative mb-6 w-full overflow-hidden rounded-3xl p-[1px]"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-emerald-500 opacity-60 transition-opacity group-hover:opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-teal-400 opacity-60 transition-opacity group-hover:opacity-80" />
               <div className="relative flex items-center justify-center gap-3 rounded-3xl bg-card/90 px-6 py-5 backdrop-blur-sm">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20">
                   <Play className="h-6 w-6 text-white" fill="white" />

@@ -465,7 +465,7 @@ export function ProfileContent({ userId, initialProfile }: ProfileContentProps) 
                   value={editName}
                   onChange={(e) => setEditName(e.target.value)}
                   placeholder="İsim"
-                  className="mt-2 w-full rounded-xl border-0 bg-white/[0.04] px-4 py-2.5 text-xl font-bold text-white ring-1 ring-white/[0.08] placeholder:text-white/20 focus:outline-none focus:ring-purple-500/50 sm:text-2xl"
+                  className="mt-2 w-full rounded-xl border-0 bg-white/[0.04] px-4 py-2.5 text-xl font-bold text-white ring-1 ring-white/[0.08] placeholder:text-white/20 focus:outline-none focus:ring-[color:rgba(167,139,250,0.5)] sm:text-2xl"
                 />
                 <textarea
                   value={editBio}
@@ -473,7 +473,7 @@ export function ProfileContent({ userId, initialProfile }: ProfileContentProps) 
                   placeholder="Kendinizi tanıtın..."
                   rows={3}
                   maxLength={500}
-                  className="mt-2 w-full resize-none rounded-xl border-0 bg-white/[0.04] px-4 py-2.5 text-sm text-white ring-1 ring-white/[0.08] placeholder:text-white/20 focus:outline-none focus:ring-purple-500/50"
+                  className="mt-2 w-full resize-none rounded-xl border-0 bg-white/[0.04] px-4 py-2.5 text-sm text-white ring-1 ring-white/[0.08] placeholder:text-white/20 focus:outline-none focus:ring-[color:rgba(167,139,250,0.5)]"
                 />
                 <p className="mt-1 text-xs text-white/20">{editBio.length}/500</p>
               </>
@@ -587,7 +587,7 @@ export function ProfileContent({ userId, initialProfile }: ProfileContentProps) 
                     className={`mt-4 inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition-colors disabled:opacity-60 ${
                       following
                         ? "border border-white/20 bg-transparent text-white hover:border-white/40 hover:bg-white/10"
-                        : "bg-white text-black hover:bg-white/90"
+                        : "[background:var(--grad-aurora)] text-white shadow-[0_2px_14px_rgba(167,139,250,0.4)] hover:brightness-110"
                     }`}
                   >
                     {following ? (

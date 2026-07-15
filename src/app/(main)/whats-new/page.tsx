@@ -81,7 +81,7 @@ export default function WhatsNewPage() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={playAll}
-              className="flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-emerald-600 px-6 py-2.5 text-sm font-semibold text-white shadow-[0_0_20px_rgba(168,85,247,0.25)]"
+              className="flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-500 to-teal-500 px-6 py-2.5 text-sm font-semibold text-white shadow-[0_0_20px_rgba(168,85,247,0.25)]"
             >
               <Play className="h-4 w-4" fill="white" />
               Tümünü Çal

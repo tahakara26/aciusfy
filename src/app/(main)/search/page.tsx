@@ -240,7 +240,7 @@ export default function SearchPage() {
               }
             }}
             placeholder={t("searchPagePlaceholder")}
-            className="w-full rounded-2xl border-0 bg-white/[0.04] py-4 pl-14 pr-12 text-lg text-white ring-1 ring-white/[0.06] transition-all placeholder:text-white/20 focus:bg-white/[0.06] focus:outline-none focus:ring-purple-500/40"
+            className="w-full rounded-2xl border-0 bg-white/[0.04] py-4 pl-14 pr-12 text-lg text-white ring-1 ring-white/[0.06] transition-all placeholder:text-white/20 focus:bg-white/[0.06] focus:outline-none focus:ring-[color:rgba(167,139,250,0.45)]"
           />
           {query && (
             <button
@@ -274,7 +274,7 @@ export default function SearchPage() {
               className={cn(
                 "rounded-lg px-4 py-2 text-sm font-medium transition-all",
                 activeTab === tab.id
-                  ? "bg-white/[0.08] text-white ring-1 ring-white/[0.08]"
+                  ? "[background:var(--grad-aurora)] text-white shadow-[0_2px_12px_rgba(167,139,250,0.35)]"
                   : "text-white/40 hover:bg-white/[0.04] hover:text-white/70"
               )}
             >
@@ -390,7 +390,7 @@ export default function SearchPage() {
               <section>
                 <div className="mb-4 flex items-center gap-2">
                   <User className="h-5 w-5 text-accent" />
-                  <h2 className="text-xl font-bold text-white">{t("users")}</h2>
+                  <h2 className="text-xl font-bold text-white border-l-2 border-[color:var(--accent)] pl-3">{t("users")}</h2>
                 </div>
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
                   {results.users.map((u) => (
@@ -437,7 +437,7 @@ export default function SearchPage() {
               <section>
                 <div className="mb-4 flex items-center gap-2">
                   <Mic2 className="h-5 w-5 text-accent" />
-                  <h2 className="text-xl font-bold text-white">{t("artists")}</h2>
+                  <h2 className="text-xl font-bold text-white border-l-2 border-[color:var(--accent)] pl-3">{t("artists")}</h2>
                 </div>
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
                   {results.artists.map((artist) => (
@@ -477,7 +477,7 @@ export default function SearchPage() {
               <section>
                 <div className="mb-4 flex items-center gap-2">
                   <Disc3 className="h-5 w-5 text-accent" />
-                  <h2 className="text-xl font-bold text-white">{t("albums")}</h2>
+                  <h2 className="text-xl font-bold text-white border-l-2 border-[color:var(--accent)] pl-3">{t("albums")}</h2>
                 </div>
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
                   {results.albums.map((album) => (
@@ -555,7 +555,7 @@ export default function SearchPage() {
         <section>
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <h2 className="text-xl font-bold text-white">
+              <h2 className="text-xl font-bold text-white border-l-2 border-[color:var(--accent)] pl-3">
                 {genres.find((g) => g.slug === activeGenre)?.name || activeGenre}
               </h2>
               <button
@@ -638,7 +638,7 @@ export default function SearchPage() {
         <section>
           <ScrollReveal delay={0.1}>
             <h2 className="mb-6 text-2xl font-bold tracking-tight text-white">
-              {t("allGenres")} <span className="bg-gradient-to-r from-purple-400 to-emerald-400 bg-clip-text text-transparent">{t("exploreGenres")}</span>
+              {t("allGenres")} <span className="bg-gradient-to-r from-violet-300 via-sky-300 to-teal-300 bg-clip-text text-transparent">{t("exploreGenres")}</span>
             </h2>
           </ScrollReveal>
 
