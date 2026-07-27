@@ -1,9 +1,12 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "releaseNotes": [
-    "Masaüstü kurulum (Windows installer)",
-    "Discord Rich Presence: şarkı kapağı ve dinleme durumu",
-    "Blend: performans ve güncelleme akışı iyileştirmeleri"
+    "Dünya Radyoları: ses ayarı artık oynatma çubuğundaki kaydırıcıyı takip ediyor",
+    "Dünya Radyoları: kopan yayın otomatik yeniden bağlanıyor, takılma algılama eklendi",
+    "Radyo ile şarkı artık üst üste binmiyor",
+    "Ses kaydırıcısı algısal eğriye geçti — düşük seviyeler gerçekten kısıyor",
+    "Ekolayzer ve mono ses masaüstü uygulamasında çalışır hâle geldi",
+    "Yeni güncelleme bildirimi: sağ altta indir ve kur"
   ],
   "downloadUrl": "https://github.com/tahakara26/aciusfy/releases/latest/download/aciusfy-setup.exe"
 }
