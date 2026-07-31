@@ -1,12 +1,9 @@
 {
-  "version": "0.1.3",
+  "version": "0.1.4",
   "releaseNotes": [
-    "Dünya Radyoları: ses ayarı artık oynatma çubuğundaki kaydırıcıyı takip ediyor",
-    "Dünya Radyoları: kopan yayın otomatik yeniden bağlanıyor, takılma algılama eklendi",
-    "Radyo ile şarkı artık üst üste binmiyor",
-    "Ses kaydırıcısı algısal eğriye geçti — düşük seviyeler gerçekten kısıyor",
-    "Ekolayzer ve mono ses masaüstü uygulamasında çalışır hâle geldi",
-    "Yeni güncelleme bildirimi: sağ altta indir ve kur"
+    "Medya tuşları artık çalışıyor: klavyendeki oynat/duraklat, önceki ve sonraki parça tuşları uygulama arka plandayken bile Aciusfy'ı yönetiyor",
+    "Önceki parça tuşu, şarkının içindeyken önce başa sarıyor; hemen başında basarsan önceki şarkıya geçiyor",
+    "Küçük oynatıcı masaüstü uygulamasında da açılıyor"
   ],
   "downloadUrl": "https://github.com/tahakara26/aciusfy/releases/latest/download/aciusfy-setup.exe"
 }
